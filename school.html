@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Just With You - Private Mini Cinema</title>
+  <!-- 
+
+Highway Template
+
+https://templatemo.com/tm-520-highway
+
+-->
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/fontAwesome.css">
+  <link rel="stylesheet" href="css/light-box.css">
+  <link rel="stylesheet" href="css/templatemo-style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">
+      <a href="index.html">Just4<em>with you</em></a>
+    </div>
+    <div class="menu-icon">
+      <span></span>
+    </div>
+  </nav>
+
+  <div id="video-container">
+    <div class="video-overlay"></div>
+    <div class="video-content">
+      <div class="inner">
+        <h1>Welcome to <em>Mini Cinema</em></h1>
+        <p>Together with you is my favorite place to be.</p>
+        <p>To be with you, that's all I want</p>
+        <div class="scroll-icon">
+          <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="img/scroll-icon.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <video autoplay="" loop="" muted>
+      <source src="deep_cover.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+
+  <div class="full-screen-portfolio" id="portfolio">
+    <div class="container-fluid">
+      <div class="portfolio-item">
+        <div class="images"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <footer>
+    <div class="container-fluid">
+      <div class="col-md-12">
+        <p>Just With You &copy; 2022 Just 4 with you </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Modal button -->
+  <div class="popup-icon">
+    <button id="modBtn" class="modal-btn"><img src="img/contact-icon.png" alt=""></button>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <!-- Modal Content -->
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h3 class="header-title">Advice For Just with you 💜</h3>
+        <div class="close-btn"><img src="img/close_contact.png" alt=""></div>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <div class="col-md-6 col-md-offset-3">
+          <form id="contact" action="" method="post">
+            <div class="row">
+              <div class="col-md-12">
+                <fieldset>
+                  <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                </fieldset>
+              </div>
+              <div class="col-md-12">
+                <fieldset>
+                  <input name="email" type="email" class="form-control" id="email" placeholder="Your email..."
+                    required="">
+                </fieldset>
+              </div>
+              <div class="col-md-12">
+                <fieldset>
+                  <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..."
+                    required=""></textarea>
+                </fieldset>
+              </div>
+              <div class="col-md-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="btn">Send Message Now</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      "https://firebasestorage.googleapis.com/v0/b/just-with-you-e3d84.appspot.com/o/School%2FCryo(2022).jpg?alt=media&token=b2021a7c-cf23-40dc-8759-7f511d2c92de",
+      "https://firebasestorage.googleapis.com/v0/b/just-with-you-e3d84.appspot.com/o/School%2FIf%20We%20Were%20A%20Season%20(2017)_Drama%20Special.jpg?alt=media&token=aee3824d-136f-4302-ae56-0bdd679fc4e3",
+      "https://firebasestorage.googleapis.com/v0/b/just-with-you-e3d84.appspot.com/o/School%2FIt%E2%80%99s%20Your%20Fault%20that%20My%20Heart%20Beats%20(2021).jpg?alt=media&token=c60d1f3b-8321-46e6-9b22-d461e945ac25",
+      "https://firebasestorage.googleapis.com/v0/b/just-with-you-e3d84.appspot.com/o/School%2FMean%20Girls%20(2004).jpg?alt=media&token=b2f141ce-9b87-4fd8-a4e1-d75ca34f867d",
+      "https://firebasestorage.googleapis.com/v0/b/just-with-you-e3d84.appspot.com/o/School%2FMy%20Best%20Friend%E2%80%99s%20Breakfast%20(2022).jpg?alt=media&token=f2dee742-5249-4b10-a044-7a9cc36e4b33",
+      "https://firebasestorage.googleapis.com/v0/b/just-with-you-e3d84.appspot.com/o/School%2FRunt%20(2021).jpg?alt=media&token=f9b2f1ec-7696-4dd3-8c34-c6900906d000",
+      "https://firebasestorage.googleapis.com/v0/b/just-with-you-e3d84.appspot.com/o/School%2FStay%20With%20Me%20(2022).jpg?alt=media&token=9e4024de-6fc3-4dce-80a8-60785f9cc120",
+
+
+
+    ]
+    const myHtml = images.map(function (path, key) {
+      return '<div class="item col-md-4 col-sm-6 col-xs-12"><a href="' + path +
+        '" data-lightbox="image-1"><img class="img_style" src="' + path + '"></a></div>';
+    }).join('');
+
+    document.querySelector('.images').innerHTML = myHtml;
+  </script>
+
+  <section class="overlay-menu">
+    <div class="container">
+      <div class="row">
+        <div class="main-menu">
+          <ul>
+            <li>
+              <a href="index.html">ANIMATION</a>
+            </li>
+            <li>
+              <a href="school.html">SCHOOL</a>
+            </li>
+            <li>
+              <a href="bl.html">BL</a>
+            </li>
+            <li>
+              <a href="stephen_chow.html">STEPHEN CHOW</a>
+            </li>
+            <li>
+              <a href="#">Coming Soon ...</a>
+            </li>
+          </ul>
+          <p>Established by SH</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
